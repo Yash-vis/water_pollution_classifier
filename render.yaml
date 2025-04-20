@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: water-pollution-classifier
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: streamlit run main.py --server.port $PORT --server.enableCORS false
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10
